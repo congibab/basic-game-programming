@@ -1,0 +1,11 @@
+﻿  stdafx.cpp
+  Game.cpp
+C:\Users\PC\Desktop\game_temp\Game.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  game_temp.cpp
+C:\Users\PC\Desktop\game_temp\Game.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  Map.cpp
+C:\Users\PC\Desktop\game_temp\Map.cpp(1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  Npc.cpp
+  Player.cpp
+  코드를 생성하고 있습니다...
+  game_temp.vcxproj -> C:\Users\PC\Desktop\game_temp\x64\Debug\game_temp.exe

@@ -13,7 +13,7 @@ Npc::~Npc()
 
 void Npc::Init()
 {
-
+	
 }
 
 void Npc::Init(int talk, int name)

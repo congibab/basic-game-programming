@@ -3,7 +3,8 @@
 
 Player::Player()
 {
-
+	PlayerVec[0] = 0;
+	PlayerVec[1] = 0;
 }
 
 Player::~Player()
@@ -18,6 +19,7 @@ void Player::Init()
 	PlayerVec[0] = 1;
 	PlayerVec[1] = 0;
 	move_val = 0;
+	checkFlag = false;
 }
 
 void Player::Main()

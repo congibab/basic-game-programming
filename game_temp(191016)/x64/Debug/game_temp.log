@@ -1,2 +1,7 @@
-﻿  Player.cpp
+﻿  Game.cpp
+  Map.cpp
+  Player.cpp
+  game_temp.cpp
+  코드를 생성하고 있습니다...
+  LINK : D:\GITHUB\basic-game-programming\game_temp(191016)\x64\Debug\game_temp.exeﾀｻ(ｸｦ) ﾃ｣ﾀｻ ｼ・ｾﾅｳｪ ｸｶﾁｷ ﾁﾐ ｸｵﾅｩｿ｡ ﾀﾇﾇﾘ ｺ蠏ﾇﾁ・ｾﾊｾﾒｽﾀｴﾏｴﾙ. ﾀ・ｼ ｸｵﾅｩｸｦ ｼ猊ﾏｰ・ﾀﾖｽﾀｴﾏｴﾙ.
   game_temp.vcxproj -> D:\GITHUB\basic-game-programming\game_temp(191016)\x64\Debug\game_temp.exe

@@ -6,6 +6,7 @@
 
 #include"Map.h"
 #include"Player.h"
+#include"Battle.h"
 
 /*ƒQ[ƒ€ƒNƒ‰ƒX*/
 class Game
@@ -20,4 +21,6 @@ public:
 private:
 	Player player;
 	Map map;
+	Battle battle;
+	bool isBattle;
 };

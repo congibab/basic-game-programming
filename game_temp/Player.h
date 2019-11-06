@@ -2,6 +2,8 @@
 #include<Windows.h>
 #include<conio.h>
 #include<string>
+#include"map.h"
+#include"Templ.h"
 
 class Player
 {
@@ -12,18 +14,27 @@ public:
 	void Init();
 	void Main();
 	void Draw();
-
 	void Destroy();
 
 	void Input();
 	void MoveCheck(std::string str);
-	void FowCheck(std::string str);
+	void FowCheck(Square_data data);
 
 	int GetPlayerPosX() { return PlayerPosX; }
 	int GetPlayerPosY() { return PlayerPosY; }
 
 	int GetPlayerVecY() { return PlayerVec[0]; }
 	int GetPlayerVecX() { return PlayerVec[1]; }
+
+	int GetMove_val() { return move_val; }
+	bool GetPressSpace() { return PressSpace; }
+
+	void SetPosition(PositionData pd) {
+		PlayerPosX = pd.x;
+		PlayerPosY = pd.y;
+		PlayerVec[0] = pd.vec_y;
+		PlayerVec[1] = pd.vec_x;
+	}
 private:
 	int PlayerPosX;
 	int PlayerPosY;
@@ -31,6 +42,9 @@ private:
 	int move_val;
 
 	bool checkFlag;
-	std::string FowSta;
+	bool PressSpace;
+	Square_data FowSta;
+	
+	Status Status;
 };
 

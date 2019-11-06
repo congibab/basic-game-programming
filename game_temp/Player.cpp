@@ -1,6 +1,8 @@
 #include"stdafx.h"
 #include"Player.h"
 
+
+
 Player::Player()
 {
 
@@ -13,14 +15,20 @@ Player::~Player()
 
 void Player::Init()
 {
-	PlayerPosX = 1;
-	PlayerPosY = 1;
+	Status.Hp = 10;
+	Status.Mp = 10;
+	Status.Agility = 10;
+	Status.Attack=  10;
+	Status.Defense =  10;
+
+	PlayerPosX = 8;
+	PlayerPosY = 8;
 	PlayerVec[0] = 1;
 	PlayerVec[1] = 0;
 	move_val = 0;
 
 	checkFlag = false;
-	FowSta = ' ';
+	PressSpace = false;
 }
 
 void Player::Main()
@@ -30,16 +38,24 @@ void Player::Main()
 
 void Player::Draw()
 {
-	if (checkFlag == true) 
+	if (checkFlag)
 	{
-		printf("/------------------------------------------\n");
-		printf("ñ⁄ÇÃÇ‹Ç¶ÇÕ%sÇ≈Ç∑ÅB \n", FowSta.c_str());
-		printf("/------------------------------------------\n");
-
+		if (FowSta.square_str != "N")
+		{
+			printf("/---------------------------------\n");
+			printf("/ñ⁄ÇÃëOÇÕ%sÇ≈Ç∑ÅB\n", FowSta.square_str.c_str());
+			printf("/---------------------------------\n");
+		}
+		else
+		{
+			printf("%s\n", FowSta.name.c_str());
+			printf("/---------------------------------\n");
+			printf("/%s\n", FowSta.contents.c_str());
+			printf("/---------------------------------\n");
+		}
 
 	}
 }
-
 
 void Player::Destroy()
 {
@@ -54,35 +70,37 @@ void Player::Input()
 		switch (_getch())
 		{
 		case 'w':
-			if (checkFlag) break;
+			if (checkFlag)break;
 			move_val = 1;
 			PlayerVec[0] = -1;
 			PlayerVec[1] = 0;
 			break;
 		case 's':
-			if (checkFlag) break;
+			if (checkFlag)break;
 			move_val = 1;
 			PlayerVec[0] = 1;
 			PlayerVec[1] = 0;
 			break;
 		case 'a':
-			if (checkFlag) break;
+			if (checkFlag)break;
 			move_val = 1;
 			PlayerVec[0] = 0;
 			PlayerVec[1] = -1;
 			break;
 		case 'd':
-			if (checkFlag) break;
+			if (checkFlag)break;
 			move_val = 1;
 			PlayerVec[0] = 0;
 			PlayerVec[1] = 1;
 			break;
-		case 'f':
-			break;
 		case 'e':
-			if (checkFlag) checkFlag = false;
+			if (checkFlag)checkFlag = false;
 			else checkFlag = true;
 			break;
+		case 32:
+			PressSpace = true;
+			break;
+
 		}
 	}
 }
@@ -91,7 +109,7 @@ void Player::MoveCheck(std::string str)
 {
 	if (move_val)
 	{
-		if (str != "Å°" && str != "ïÛ")
+		if (str != "Å°" && str != "N")
 		{
 		PlayerPosY += PlayerVec[0];
 		PlayerPosX += PlayerVec[1];
@@ -100,11 +118,10 @@ void Player::MoveCheck(std::string str)
 	}
 }
 
-void Player::FowCheck(std::string str)
+void Player::FowCheck(Square_data data)
 {
-	if (checkFlag) 
+	if (checkFlag)
 	{
-		FowSta = str;
+		FowSta = data;
 	}
-	
 }

@@ -60,24 +60,29 @@ void Battle::Main()
 
 void Battle::Draw()
 {
+	std::string Output = "";
 	switch (ss)
 	{
 	case Begin:
+		Output = "バトルが始めました\n";
 		break;
 	case PlayerSelect:
+		Output = "プレイヤー選択\n";
 		break;
 	case PlaterAttack:
-	
+		Output = "プレイヤー攻撃\n";
 		break;
 	case EnemyAttack:
-		
+		Output = "敵の攻撃\n";
 		break;
 	case end:
+		Output = "バトル終了\n";
 		break;
 	default:
 		break;
 	}
 	printf("%s", str[ss].c_str());
+	printf("%s", Output.c_str());
 }
 
 void Battle::Destroy()
@@ -119,10 +124,10 @@ void Battle::Input()
 
 void Battle::Message()
 {
-	str[0] = "バトルが始めました";
-	str[1] = "プレイヤー選択";
-	str[2] = "プレイヤー攻撃";
-	str[3] = "敵の攻撃";
-	str[4] = "バトル終了";
+	str[0] = "バトルが始めました\n";
+	str[1] = "プレイヤー選択\n";
+	str[2] = "プレイヤー攻撃\n";
+	str[3] = "敵の攻撃\n";
+	str[4] = "バトル終了\n";
 }
 

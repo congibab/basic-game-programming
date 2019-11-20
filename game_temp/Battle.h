@@ -1,5 +1,7 @@
+#include <stdlib.h>
 #include <random>
 #include <conio.h>
+#include <String>
 
 #pragma once
 enum ScenStatus
@@ -24,6 +26,8 @@ public:
 	void EnCount();
 	void BattleBegin();
 	void Input();
+	void Message();
+
 
 	ScenStatus GetSceneStatus() { return ss; };
 	bool GetisBattle() { return isBattle; };
@@ -33,7 +37,8 @@ public:
 private:
 	ScenStatus ss;
 
-	bool isBattle;
+	bool isBattle = false;
 	int Random;
+	std::string str[5];
 };
 
